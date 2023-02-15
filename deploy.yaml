@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-apache
+spec:
+  selector:
+    matchLabels:
+      app: argo-web-apache
+  template:
+    metadata:
+      labels:
+        app: argo-web-apache
+    spec:
+      containers:
+        - name: kontik
+          image: httpd
